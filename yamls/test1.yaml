@@ -12,4 +12,10 @@
         state: present
         groups:
           - Administrators
+          
+    - name: change the user group to Administrators
+      ansible.windows.win_user_right:
+        name: SeSystemEnvironmentPrivilege
+        users:
+          - Administrators
     
