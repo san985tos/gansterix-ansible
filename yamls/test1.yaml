@@ -18,4 +18,13 @@
         name: SeSystemEnvironmentPrivilege
         users:
           - Administrators
+
+    - name: add linux user named santos
+      ansible.windows.win_user:
+        name: santos
+        password: "{{ password }}"
+        state: present
+        groups:
+          - Administrators
+    
     
