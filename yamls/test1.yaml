@@ -1,1 +1,19 @@
-testing
+---
+- name: Testing Ansible Lightspeed
+  hosts: monitoring
+  become: true
+
+  # module_defaults:
+  #   ansible.posix.firewalld:
+  #     permanent: true
+
+  tasks:
+
+    - name: Create an user named asterix on active directory on windows server 2019
+      ansible.windows.win_user:
+        name: asterix
+        password: "{{ _password_ }}"
+        state: present
+        groups:
+          - Administrators
+    
